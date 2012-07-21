@@ -1,7 +1,7 @@
 #Alpha, with Sarah Lasonia's edits! RasPi FTW!
 #2012
 
-import pygame, random, time, player_info, moveable_dude, os
+import pygame, random, time, player_info, moveable_dude, os #they forgot os -.-
 from pygame.locals import *
 
 pygame.init()
@@ -11,6 +11,7 @@ screensize = screen.get_size()
 center = [320,240]
 centership = [288,226]
 pygame.display.set_caption("Raspithon Game")
+pygame.mouse.set_visible(False)
 
 font = pygame.font.Font(None, 32)
 
@@ -32,7 +33,6 @@ playtime = 0.0
 bgmusic = pygame.mixer.music.load("backgroundmusic.mp3")
 pygame.mixer.init()
 # pygame.mixer.music.play(-1) As requested until we finish
-#brb
 
 #Display the ship
 player = player_info.Player(screen)
