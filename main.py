@@ -9,23 +9,23 @@ randnum = randint(2,3) # 1 to 4, code is inclusive
 
 pygame.init()
 
-if randnum == 1:
+if randnum == 1:	# Sarah added randomised titles.
 	rand = "Oh no, not the Aliens!"
 
-if randnum == 2:
+if randnum == 2:	# Sarah added randomised titles.
 	rand = "Spaaaccceee!"
 
-if randnum == 3:
+if randnum == 3:	# Sarah added randomised titles.
 	rand = "Developed by the RasPi Community!"
 
-if randnum == 4:
+if randnum == 4:	# Sarah added randomised titles.
 	rand = "Cheeseburgers are tasty."
 
 screen = pygame.display.set_mode((640,480), 0)
 screensize = screen.get_size()
 center = [320,240]
 centership = [288,226]
-pygame.display.set_caption("Raspithon Game | A collaborative Project | " + rand)
+pygame.display.set_caption("Raspithon Game | A collaborative Project | " + rand) # Sarah added randomised titles.
 pygame.mouse.set_visible(False) # We don't want the mouse to block the way.
 
 font = pygame.font.Font(None, 32)
@@ -89,9 +89,9 @@ while running:
     
     #On keypress        
     keystate = pygame.key.get_pressed()
-    if keystate[pygame.K_RIGHT]:      
+    if keystate[pygame.K_RIGHT]:      # Key right
         player.turnRight()
-    if keystate[pygame.K_LEFT]:
+    if keystate[pygame.K_LEFT]:		# Key Left
         player.turnLeft()
     if keystate[pygame.K_F12]:
         moveable_dude.initialiseDudes(900)
