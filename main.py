@@ -1,17 +1,32 @@
 #Alpha, with Sarah Lasonia's edits! RasPi FTW!
 #2012
 
-import pygame, random, time, player_info, moveable_dude, os #they forgot os -.-
+import pygame, random, time, player_info, moveable_dude, os # They forgot os -.-
 from pygame.locals import *
+from random import randint
+
+randnum = randint(2,3) # 1 to 4, code is inclusive
 
 pygame.init()
+
+if randnum == 1:
+	rand = "Oh no, not the Aliens!"
+
+if randnum == 2:
+	rand = "Spaaaccceee!"
+
+if randnum == 3:
+	rand = "Developed by the RasPi Community!"
+
+if randnum == 4:
+	rand = "Cheeseburgers are tasty."
 
 screen = pygame.display.set_mode((640,480), 0)
 screensize = screen.get_size()
 center = [320,240]
 centership = [288,226]
-pygame.display.set_caption("Raspithon Game")
-pygame.mouse.set_visible(False)
+pygame.display.set_caption("Raspithon Game | A collaborative Project | " + rand)
+pygame.mouse.set_visible(False) # We don't want the mouse to block the way.
 
 font = pygame.font.Font(None, 32)
 
@@ -38,8 +53,7 @@ pygame.mixer.init()
 player = player_info.Player(screen)
 alien = player_info.Alien(screen, clock)
 move = moveable_dude.MoveableDude()
-allSprites = pygame.sprite.Group(player, enemies)
-Group.add(
+allSprites = pygame.sprite.Group(player)
 
 moveable_dude.initialiseDudes(10) #Creds to Cakez0r for helping me out with this
 
