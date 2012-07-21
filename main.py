@@ -1,7 +1,7 @@
 
 #test
 
-import pygame, random, time, player_info, moveable_dude
+import pygame, random, time, player_info, moveable_dude, gun
 from pygame.locals import *
 
 pygame.init()
@@ -42,6 +42,9 @@ allSprites = pygame.sprite.Group(player)
 
 moveable_dude.initialiseDudes(10) #Creds to Cakez0r for helping me out with this
 
+guntest = gun.Gun()
+guntest.fire()
+
 while running:
     screen.blit(background,(0,0)) # comment
     pygame.display.flip() # comment
@@ -55,11 +58,12 @@ while running:
     background.blit(player.image, player.rect)
     background.blit(alien.image, alien.rect)
     moveable_dude.updateAndDrawDudes(background)
-
-    print(player.rect)
   
     alien.add()
     alien.update(1)
+    
+    guntest.update(float(milliseconds) / 1000)
+    guntest.draw(background)
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -78,8 +82,8 @@ while running:
         player.turnRight()
     if keystate[pygame.K_LEFT]:
         player.turnLeft()
-    if keystate[pygame.K_F12]:
-        moveable_dude.initialiseDudes(900)
+    if pygame.mouse.get_pressed()[0]:
+        guntest.fire()
     if keystate[pygame.K_q]:
         pygame.quit()
         

@@ -41,7 +41,6 @@ class Alien(pygame.sprite.Sprite):
         self.count = 0
     def add(self):
         self.alienspeed = 50
-        print(self.tickclock)
         self.tickclock += 1
         if self.tickclock == 30:
             self.count += 1
