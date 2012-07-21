@@ -1,7 +1,7 @@
+#Alpha, with Sarah Lasonia's edits! RasPi FTW!
+#2012
 
-#test
-
-import pygame, random, time, player_info, moveable_dude
+import pygame, random, time, player_info, moveable_dude, os
 from pygame.locals import *
 
 pygame.init()
@@ -32,13 +32,14 @@ playtime = 0.0
 bgmusic = pygame.mixer.music.load("backgroundmusic.mp3")
 pygame.mixer.init()
 # pygame.mixer.music.play(-1) As requested until we finish
-
+#brb
 
 #Display the ship
 player = player_info.Player(screen)
 alien = player_info.Alien(screen, clock)
 move = moveable_dude.MoveableDude()
-allSprites = pygame.sprite.Group(player)
+allSprites = pygame.sprite.Group(player, enemies)
+Group.add(
 
 moveable_dude.initialiseDudes(10) #Creds to Cakez0r for helping me out with this
 
